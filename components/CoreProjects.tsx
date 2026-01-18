@@ -1,110 +1,116 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CORE_PROJECTS } from '../constants';
-import { ChevronRight, ArrowRight, TrendingUp } from 'lucide-react';
+import { ChevronRight, ArrowRight, TrendingUp, Info } from 'lucide-react';
 
 export const CoreProjects: React.FC = () => {
   return (
-    <section id="core-projects" className="py-24">
-      <div className="text-center mb-10">
-        <h2 className="text-[2.2rem] font-bold text-[#9c533b] brush-underline inline-block">
+    <section id="core-projects" className="py-32">
+      <div className="text-center mb-20">
+        <h2 className="text-[2.5rem] font-black text-[#9c533b] brush-underline inline-block px-2">
           核心项目｜深度展开
         </h2>
-        <p className="mt-4 text-[1rem] text-gray-500">每一个项目背后都藏着一条弯路</p>
+        <p className="mt-6 text-gray-400 font-medium tracking-wide">每一个项目背后都藏着一条弯路</p>
       </div>
 
-      <div className="space-y-24 mt-10">
-        {CORE_PROJECTS.map((project) => (
+      <div className="space-y-32">
+        {CORE_PROJECTS.map((project, idx) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-white/80 backdrop-blur-md rounded-3xl p-8 lg:p-12 border border-white/60 shadow-2xl"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, delay: idx * 0.1 }}
+            className="glass-card rounded-[2.5rem] p-8 lg:p-14 shadow-2xl shadow-pink-100/20"
           >
-            {/* Removed border-l-8 border-[#FF8EB2] and pl-6 to remove the pink square/bar */}
-            <h3 className="text-[1.8rem] font-bold text-gray-800 mb-8">
-              {project.title}
-            </h3>
-
-            <div className="flex flex-col lg:flex-row gap-12">
-              <div className="flex-1 space-y-8">
-                <div>
-                  <h4 className="flex items-center gap-2 text-[1.1rem] font-bold text-gray-800 mb-4">
-                    {/* Keep yellow square/bar here */}
-                    <span className="w-1.5 h-5 bg-[#FFD93D] rounded-sm shrink-0" />
-                    项目背景
-                  </h4>
-                  <p className="text-[1rem] text-gray-600 leading-[1.7] font-normal">{project.bg}</p>
+            <div className="flex flex-col lg:flex-row gap-16 relative">
+              <div className="flex-1 flex flex-col">
+                <div className="mb-10">
+                  <span className="text-[0.75rem] font-black text-[#FF8EB2] uppercase tracking-[0.3em] mb-2 block">Project 0{idx + 1}</span>
+                  <h3 className="text-[2rem] font-black text-gray-900 leading-tight">
+                    {project.title}
+                  </h3>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Linear Solution Box */}
-                  <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 relative group overflow-hidden">
-                    <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}></div>
-                    <TrendingUp className="absolute -bottom-2 -right-2 w-16 h-16 text-gray-200 opacity-20 -rotate-12 group-hover:scale-110 transition-transform" />
-                    <span className="block text-[1rem] font-bold text-gray-400 uppercase tracking-widest mb-2 relative z-10">直线方案 (常规)</span>
-                    <p className="text-[0.95rem] text-gray-500 font-medium leading-[1.7] relative z-10">{project.badSolution}</p>
+                <div className="space-y-10 flex-1">
+                  <div className="relative pl-6 border-l-2 border-[#FFD93D]/30">
+                    <h4 className="flex items-center gap-2 text-[1rem] font-black text-gray-900 mb-3">
+                      项目背景
+                    </h4>
+                    <p className="text-[0.95rem] text-gray-600 leading-relaxed font-medium">{project.bg}</p>
                   </div>
-                  {/* Winding Path Box */}
-                  <div className="bg-[#FF8EB2]/5 p-6 rounded-2xl border border-[#FF8EB2]/20 relative group overflow-hidden">
-                    <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}></div>
-                    <ArrowRight className="absolute -bottom-2 -right-2 w-16 h-16 text-[#FF8EB2] opacity-10 -rotate-12 group-hover:scale-110 transition-transform" />
-                    <span className="block text-[1rem] font-bold text-[#9c533b] uppercase tracking-widest mb-2 relative z-10">我的弯路选择</span>
-                    <p className="text-[0.95rem] text-[#9c533b] font-medium leading-[1.7] relative z-10">{project.goodSolution}</p>
-                  </div>
-                </div>
 
-                <div>
-                  <h4 className="flex items-center gap-2 text-[1.1rem] font-bold text-gray-800 mb-4">
-                    {/* Keep yellow square/bar here */}
-                    <span className="w-1.5 h-5 bg-[#FFD93D] rounded-sm shrink-0" />
-                    核心机制设计
-                  </h4>
-                  <ul className="space-y-3">
-                    {project.mechanisms.map((mech, mIdx) => {
-                      const parts = mech.split('：');
-                      const keyword = parts[0];
-                      const description = parts[1] || '';
-                      return (
-                        <li key={mIdx} className="text-gray-600 text-[1rem] leading-[1.7]">
-                          <span className="font-normal text-gray-500">
-                            <strong className="font-medium text-gray-800">{keyword}：</strong>
-                            {description}
-                          </span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-
-                {project.results.length > 0 && (
-                  <div className="bg-gradient-to-br from-[#FFF0F5] to-white p-6 rounded-2xl flex flex-wrap gap-8 border border-[#FF8EB2]/10 shadow-sm">
-                    {project.results.map((res, rIdx) => (
-                      <div key={rIdx} className="flex-1 min-w-[100px] text-center">
-                        <span className="block text-[1.4rem] font-bold text-[#FF8EB2]">{res.value}</span>
-                        <span className="text-[0.85rem] text-gray-400 font-bold uppercase tracking-wider">{res.label}</span>
-                      </div>
-                    ))}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="bg-gray-50/50 p-6 rounded-[1.5rem] border border-gray-100 relative group transition-all hover:bg-white hover:shadow-lg">
+                      <TrendingUp className="absolute top-4 right-4 w-5 h-5 text-gray-300" />
+                      <span className="block text-[0.75rem] font-black text-gray-400 uppercase tracking-widest mb-3">常规直线方案</span>
+                      <p className="text-[0.9rem] text-gray-500 font-medium leading-relaxed">{project.badSolution}</p>
+                    </div>
+                    <div className="bg-[#FF8EB2]/5 p-6 rounded-[1.5rem] border border-[#FF8EB2]/10 relative group transition-all hover:bg-white hover:shadow-lg">
+                      <ArrowRight className="absolute top-4 right-4 w-5 h-5 text-[#FF8EB2]" />
+                      <span className="block text-[0.75rem] font-black text-[#9c533b] uppercase tracking-widest mb-3">我的弯路方案追求</span>
+                      <p className="text-[0.9rem] text-[#9c533b] font-bold leading-relaxed">{project.goodSolution}</p>
+                    </div>
                   </div>
-                )}
+
+                  <div>
+                    <h4 className="text-[1rem] font-black text-gray-900 mb-5">核心机制设计</h4>
+                    <div className="grid grid-cols-1 gap-4">
+                      {project.mechanisms.map((mech, mIdx) => {
+                        const [key, val] = mech.split('：');
+                        return (
+                          <div key={mIdx} className="flex gap-4 items-start p-4 rounded-xl hover:bg-white/50 transition-colors">
+                            <div className="w-2 h-2 rounded-full bg-[#FFD93D] mt-2 shrink-0 shadow-[0_0_8px_rgba(255,217,61,0.6)]" />
+                            <p className="text-[0.95rem] text-gray-600 leading-relaxed">
+                              <span className="font-bold text-gray-900">{key}：</span>{val}
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {project.results.length > 0 && (
+                    <div className="bg-white/50 backdrop-blur-sm p-8 rounded-[1.8rem] grid grid-cols-3 gap-4 border border-white/80 shadow-inner">
+                      {project.results.map((res, rIdx) => (
+                        <div key={rIdx} className="text-center">
+                          <span className="block text-[1.6rem] font-black text-[#FF8EB2] tracking-tighter">{res.value}</span>
+                          <span className="text-[0.7rem] text-gray-400 font-bold uppercase tracking-widest">{res.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
 
-              <div className="lg:w-72 shrink-0 flex flex-col items-center">
-                <a
-                  href={project.h5Url}
-                  target="_blank"
-                  className="group relative w-full aspect-[9/16] bg-black border-[6px] border-gray-900 rounded-[2.5rem] shadow-2xl overflow-hidden cursor-pointer"
-                >
-                  <div className="w-full h-full overflow-y-auto no-scrollbar">
-                    <img src={project.h5Img} alt="Preview" className="w-full h-auto" />
-                  </div>
-                  <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-black/80 to-transparent flex items-center justify-center gap-2 text-white font-bold text-[0.9rem] opacity-0 group-hover:opacity-100 transition-opacity">
-                    了解更多 <ChevronRight className="w-4 h-4" />
-                  </div>
-                </a>
-                <p className="mt-4 text-[0.9rem] text-gray-400 font-medium">点击进入真实场景体验</p>
+              <div className="lg:w-80 shrink-0 flex flex-col pt-[115px]">
+                <div className="sticky top-24">
+                  <a
+                    href={project.h5Url}
+                    target="_blank"
+                    className="group relative block w-full aspect-[9/18.5] bg-[#1a1a1a] border-[6px] border-[#222] rounded-[2.5rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.3)] overflow-hidden transition-transform hover:scale-[1.01]"
+                  >
+                    <div className="w-full h-full overflow-y-auto no-scrollbar bg-white">
+                      <img 
+                        src={project.h5Img} 
+                        alt="Preview" 
+                        className="w-full h-auto block"
+                        onError={(e) => {
+                          e.currentTarget.src = "https://placehold.co/400x800?text=Preview+Loading...";
+                        }}
+                      />
+                    </div>
+                    
+                    {/* Bottom-only mask as requested */}
+                    <div className="absolute bottom-0 left-0 right-0 h-2/5 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end pb-8 gap-2 text-white pointer-events-none">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="font-bold text-[1.1rem] tracking-widest">了解更多</span>
+                        <ChevronRight className="w-5 h-5" />
+                      </div>
+                    </div>
+                  </a>
+                  <p className="mt-4 text-[0.8rem] text-gray-400 font-bold text-center uppercase tracking-[0.2em]">滑动可查看更多</p>
+                </div>
               </div>
             </div>
           </motion.div>

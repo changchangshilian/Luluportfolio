@@ -5,26 +5,37 @@ import { METHODS } from '../constants';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 text-center">
-      <div className="mb-10 inline-block">
-        <h2 className="text-[2.2rem] font-bold text-[#9c533b] brush-underline">
-          关于我｜弯路方法论
+    <section id="about" className="py-32 text-center">
+      <div className="mb-16">
+        <h2 className="text-[2.5rem] font-black text-[#9c533b] brush-underline inline-block px-2">
+          弯路方法论
         </h2>
-        <p className="mt-4 text-[1rem] text-gray-500 font-medium">我的弯路不是低效，而是寻找最优解的方法</p>
+        <p className="mt-6 text-gray-500 font-medium text-[1.1rem] max-w-2xl mx-auto leading-relaxed">
+          我的弯路并非是对效率的妥协，而是一种更长远的选择。
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
         {METHODS.map((method, idx) => (
           <motion.div
             key={idx}
-            whileHover={{ y: -8 }}
-            className="relative bg-white/70 backdrop-blur-xl p-8 rounded-2xl shadow-xl border border-white/50 overflow-hidden group"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: idx * 0.15 }}
+            whileHover={{ y: -10, boxShadow: "0 30px 60px -12px rgba(255,142,178,0.15)" }}
+            className="relative glass-card p-10 rounded-[2rem] text-left group overflow-hidden"
           >
-            <span className="absolute -bottom-6 -right-4 text-[5rem] font-bold text-[#FFD93D] opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
-              {method.num}
-            </span>
-            <h3 className="text-[1.4rem] font-bold text-[#9c533b] mb-4 relative z-10">{method.title}</h3>
-            <p className="text-[1rem] text-gray-600 leading-[1.7] font-normal relative z-10">{method.desc}</p>
+            <div className="absolute top-0 right-0 p-6">
+              <span className="text-[5rem] font-black text-[#FFD93D] opacity-[0.08] group-hover:opacity-20 transition-all duration-500">
+                {method.num}
+              </span>
+            </div>
+            <div className="relative z-10">
+              <div className="w-12 h-1.5 bg-[#FFD93D] rounded-full mb-8 group-hover:w-20 transition-all duration-500" />
+              <h3 className="text-[1.5rem] font-black text-gray-900 mb-5 leading-tight">{method.title}</h3>
+              <p className="text-[1rem] text-gray-500 leading-relaxed font-medium">{method.desc}</p>
+            </div>
           </motion.div>
         ))}
       </div>
