@@ -54,9 +54,9 @@ export const Contact: React.FC<ContactProps> = ({ showToast }) => {
           </button>
         ))}
 
-        {/* 简历下载按钮：设置下载文件名为“黄皖鹭-个人简历.pdf” */}
+        {/* 简历下载按钮：使用相对路径以增强不同部署环境下的兼容性 */}
         <a
-          href="/resume.pdf"
+          href="resume.pdf"
           download="黄皖鹭-个人简历.pdf"
           className="bg-[#ff9e2c] group flex items-center justify-between px-4 py-3 rounded-2xl shadow-md hover:scale-[1.03] active:scale-95 transition-all text-white h-16"
         >
