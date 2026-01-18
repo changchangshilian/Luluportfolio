@@ -133,9 +133,9 @@ export const COLLECTION: CollectionSystem[] = [
   },
   {
     title: "游园会-场景化活动产品体系",
-    thinking: "将线上活动包装为沉浸式场景，通过探索地图串联多个子玩法，提升用户在特定节点的停留时长与参与深度。",
+    thinking: "产品思路：将活动设计为可探索的沉浸式场景结构，用地图串联各个子玩法，提高用户关键节点的停留和参与。",
     links: [
-      { title: "湘财证券｜智富嘉年华·湘遇 818", url: "https://wap.xcsc.com/activity/cms/xiangcai8182025/index.html?id=QTsPgM5z#/" },
+      { title: "湘财证券｜智富嘉年华·湘遇 818", url: "https://wap.xcsc.com.cn/activity/cms/xiangcai8182025/index.html?id=QTsPgM5z#/" },
       { title: "好游快爆App｜《冲呀！饼干人：王国》探秘香草王国", url: "https://huodong3.i3839.com/n/hykb/bgr/index.php?imm=0" }
     ]
   },

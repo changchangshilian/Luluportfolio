@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { QUICK_PROJECTS } from '../constants';
@@ -18,8 +17,8 @@ export const Representative: React.FC = () => {
         {QUICK_PROJECTS.map((project, idx) => (
           <motion.div
             key={idx}
-            whileHover={{ y: -5 }}
-            className="bg-white rounded-[2rem] shadow-md border-t-4 border-[#6BCB77] overflow-hidden flex flex-col"
+            whileHover={{ y: -8, boxShadow: "0 30px 60px -15px rgba(0,0,0,0.08)" }}
+            className="glass-card rounded-[2rem] shadow-xl overflow-hidden flex flex-col group transition-all duration-300"
           >
             <div className="p-8 pb-4">
               <div className="flex items-center gap-4 mb-6">
@@ -33,10 +32,10 @@ export const Representative: React.FC = () => {
                 {project.desc}
               </p>
               
-              <div className="w-full h-px bg-gray-100 mb-6"></div>
+              <div className="w-full h-px bg-gray-100/50 mb-6 group-hover:bg-[#FF8EB2]/10 transition-colors"></div>
               
               <p className="text-[0.95rem] text-gray-700 font-normal leading-[1.7]">
-                <span className="font-bold">数据：</span>{project.data}
+                <span className="font-bold text-[#9c533b]/80">数据反馈：</span>{project.data}
               </p>
             </div>
             
@@ -44,9 +43,9 @@ export const Representative: React.FC = () => {
               <a
                 href={project.link}
                 target="_blank"
-                className="inline-flex items-center gap-1 text-[#9c533b] font-bold text-[0.9rem] group"
+                className="inline-flex items-center gap-1 text-[#9c533b] font-bold text-[0.9rem] group/btn"
               >
-                立即前往 <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                立即前往 <ExternalLink className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 group-hover/btn:text-[#FF8EB2]" />
               </a>
             </div>
           </motion.div>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { COLLECTION } from '../constants';
 import { Lightbulb, ExternalLink } from 'lucide-react';
@@ -15,14 +14,15 @@ export const Collection: React.FC = () => {
 
       <div className="space-y-12 mt-10">
         {COLLECTION.map((system, idx) => (
-          <div key={idx} className="bg-white p-8 lg:p-12 rounded-[2rem] shadow-xl border border-white/60">
+          <div key={idx} className="glass-card p-8 lg:p-12 rounded-[2rem] shadow-xl border border-white/60">
             <h3 className="text-[1.8rem] font-bold text-gray-800 mb-6">{system.title}</h3>
             
-            <div className="bg-[#6BCB77]/10 p-6 rounded-2xl border-l-8 border-[#6BCB77] mb-8">
+            {/* Thinking Box: Colors updated to Yellow theme */}
+            <div className="bg-[#FFD93D]/10 p-6 rounded-2xl border-l-8 border-[#FFD93D] mb-8">
               <div className="flex items-start gap-4">
-                <Lightbulb className="w-6 h-6 text-[#6BCB77] shrink-0" />
+                <Lightbulb className="w-6 h-6 text-[#FFD93D] shrink-0" />
                 <p className="text-[0.95rem] text-gray-600 font-normal leading-[1.7]">
-                  <span className="font-bold text-gray-800">产品思路：</span>{system.thinking}
+                  <span className="font-bold text-gray-800">产品思路：</span>{system.thinking.replace(/^产品思路：/, '')}
                 </p>
               </div>
             </div>
