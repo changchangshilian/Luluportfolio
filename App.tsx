@@ -22,21 +22,21 @@ const App: React.FC = () => {
     <div ref={containerRef} className="relative overflow-x-hidden min-h-screen">
       <Header />
       
-      {/* 左侧装饰图 - 置于左上方，尺寸更精致，z-index 更高 */}
-      <div className="fixed top-[5%] left-[2%] md:left-[4%] lg:left-[6%] z-20 pointer-events-none opacity-20 lg:opacity-70 transition-all duration-1000">
+      {/* 左侧装饰图 - 置于左上方，z-index 设为 25 确保在右侧建筑之上 */}
+      <div className="fixed top-[5%] left-[1%] md:left-[3%] lg:left-[5%] z-25 pointer-events-none opacity-20 lg:opacity-70 transition-all duration-1000">
         <img 
           src="https://pub-82355f44706248d19932b146a7c892b2.r2.dev/lulupicture.dpdns.org/1%401x.png" 
           alt="Decoration Left" 
-          className="w-[150px] md:w-[280px] lg:w-[380px] xl:w-[450px] aspect-square object-contain" 
+          className="w-[140px] md:w-[260px] lg:w-[350px] xl:w-[420px] aspect-square object-contain" 
         />
       </div>
 
       {/* 右侧装饰图 - 置于右下方，z-index 较低 */}
-      <div className="fixed bottom-[5%] right-[2%] md:right-[4%] lg:right-[6%] z-10 pointer-events-none opacity-20 lg:opacity-70 transition-all duration-1000">
+      <div className="fixed bottom-[5%] right-[1%] md:right-[3%] lg:right-[5%] z-10 pointer-events-none opacity-20 lg:opacity-70 transition-all duration-1000">
         <img 
           src="https://pub-82355f44706248d19932b146a7c892b2.r2.dev/lulupicture.dpdns.org/2%401x.png" 
           alt="Decoration Right" 
-          className="w-[150px] md:w-[280px] lg:w-[380px] xl:w-[450px] aspect-square object-contain" 
+          className="w-[140px] md:w-[260px] lg:w-[350px] xl:w-[420px] aspect-square object-contain" 
         />
       </div>
 
