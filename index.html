@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>黄皖鹭的作品集 | Product Journey</title>
+    <!-- 注入 process.env 模拟，防止部分第三方库在生产环境崩溃 -->
+    <script>
+      window.process = { env: { NODE_ENV: 'production' } };
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       :root {
@@ -51,11 +55,12 @@
   "imports": {
     "react": "https://esm.sh/react@18.2.0",
     "react/": "https://esm.sh/react@18.2.0/",
+    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
     "react-dom": "https://esm.sh/react-dom@18.2.0",
     "react-dom/": "https://esm.sh/react-dom@18.2.0/",
     "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
-    "framer-motion": "https://esm.sh/framer-motion@11.11.11?external=react,react-dom",
-    "lucide-react": "https://esm.sh/lucide-react@0.460.0?external=react,react-dom"
+    "framer-motion": "https://esm.sh/framer-motion@11.11.11?external=react,react-dom,react/jsx-runtime",
+    "lucide-react": "https://esm.sh/lucide-react@0.460.0?external=react,react-dom,react/jsx-runtime"
   }
 }
 </script>
