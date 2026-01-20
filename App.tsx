@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -23,10 +24,10 @@ const App: React.FC = () => {
       <Header />
       
       <div className="fixed top-24 left-[2%] z-0 pointer-events-none opacity-40 lg:opacity-100 transition-opacity">
-        <img src="https://pub-82355f44706248d19932b146a7c892b2.r2.dev/lulupicture.dpdns.org/2.png" alt="Decoration" className="max-w-[150px] lg:max-w-[30vw] object-contain" />
+        <img src="https://i.ibb.co/LDTLPXBt/4399building.png" alt="Decoration" className="max-w-[150px] lg:max-w-[30vw] object-contain" />
       </div>
       <div className="fixed bottom-24 right-[2%] z-0 pointer-events-none opacity-40 lg:opacity-100 transition-opacity">
-        <img src="https://pub-82355f44706248d19932b146a7c892b2.r2.dev/lulupicture.dpdns.org/3.png" alt="Decoration" className="max-w-[150px] lg:max-w-[30vw] object-contain" />
+        <img src="https://i.ibb.co/wFjw8J1j/jiniu-building.png" alt="Decoration" className="max-w-[150px] lg:max-w-[30vw] object-contain" />
       </div>
 
       <WindingPath />

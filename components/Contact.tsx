@@ -30,7 +30,7 @@ export const Contact: React.FC<ContactProps> = ({ showToast }) => {
         className="w-full max-w-4xl mx-auto mb-12 px-6"
       >
         <img
-          src="https://pub-82355f44706248d19932b146a7c892b2.r2.dev/lulupicture.dpdns.org/7.png"
+          src="https://i.ibb.co/Y7H2LPLP/2222222.png"
           alt="Contact Me"
           className="w-[90%] max-w-2xl mx-auto drop-shadow-2xl"
         />

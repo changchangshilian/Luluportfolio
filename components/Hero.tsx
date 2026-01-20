@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
             initial={{ scale: 0.95 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            src="https://pub-82355f44706248d19932b146a7c892b2.r2.dev/lulupicture.dpdns.org/1.png"
+            src="https://i.ibb.co/KckkyMS7/image.png"
             alt="Product Journey"
             className="w-[90%] max-w-2xl drop-shadow-[0_32px_64px_rgba(255,142,178,0.2)]"
             onError={(e) => { e.currentTarget.src = "https://placehold.co/1200x600?text=Product+Portfolio"; }}
