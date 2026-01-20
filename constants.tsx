@@ -44,7 +44,7 @@ export const CORE_PROJECTS: Project[] = [
       { label: "卡户转化", value: "5000+" }
     ],
     h5Url: "https://mp.weixin.qq.com/s/sEQerIhlQa2dSPw7oKdC8w",
-    h5Img: "https://i.ibb.co/pB4sJVvh/2-1x.png"
+    h5Img: "https://pub-82355f44706248d19932b146a7c892b2.r2.dev/lulupicture.dpdns.org/4.png"
   },
   {
     id: "project-2",
