@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -22,22 +23,11 @@ const App: React.FC = () => {
     <div ref={containerRef} className="relative overflow-x-hidden min-h-screen">
       <Header />
       
-      {/* 左侧装饰图 - 大幅增加尺寸并微调位置 */}
-      <div className="fixed top-16 -left-4 z-0 pointer-events-none opacity-40 lg:opacity-100 transition-opacity">
-        <img 
-          src="https://pub-82355f44706248d19932b146a7c892b2.r2.dev/lulupicture.dpdns.org/1%20(1).png" 
-          alt="Decoration Left" 
-          className="w-[300px] lg:w-[700px] h-auto object-contain" 
-        />
+      <div className="fixed top-24 left-[2%] z-0 pointer-events-none opacity-40 lg:opacity-100 transition-opacity">
+        <img src="https://i.ibb.co/LDTLPXBt/4399building.png" alt="Decoration" className="max-w-[150px] lg:max-w-[30vw] object-contain" />
       </div>
-
-      {/* 右侧装饰图 - 大幅增加尺寸并微调位置 */}
-      <div className="fixed bottom-12 -right-4 z-0 pointer-events-none opacity-40 lg:opacity-100 transition-opacity">
-        <img 
-          src="https://pub-82355f44706248d19932b146a7c892b2.r2.dev/lulupicture.dpdns.org/2.png" 
-          alt="Decoration Right" 
-          className="w-[300px] lg:w-[700px] h-auto object-contain" 
-        />
+      <div className="fixed bottom-24 right-[2%] z-0 pointer-events-none opacity-40 lg:opacity-100 transition-opacity">
+        <img src="https://i.ibb.co/wFjw8J1j/jiniu-building.png" alt="Decoration" className="max-w-[150px] lg:max-w-[30vw] object-contain" />
       </div>
 
       <WindingPath />
