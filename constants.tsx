@@ -44,7 +44,7 @@ export const CORE_PROJECTS: Project[] = [
       { label: "卡户转化", value: "5000+" }
     ],
     h5Url: "https://mp.weixin.qq.com/s/sEQerIhlQa2dSPw7oKdC8w",
-    h5Img: "https://i.ibb.co/pB4sJVvh/2-1x.png"
+    h5Img: "https://pub-82355f44706248d19932b146a7c892b2.r2.dev/lulupicture.dpdns.org/4.png"
   },
   {
     id: "project-2",
@@ -63,7 +63,7 @@ export const CORE_PROJECTS: Project[] = [
       { label: "活动分享率", value: "80%" }
     ],
     h5Url: "https://huodong3.3839.com/n/hykb/jingpai2/index.php?comm_id=99&imm=0",
-    h5Img: "https://i.ibb.co/4gDtLsqq/Frame-1000006464-1x.png"
+    h5Img: "https://pub-82355f44706248d19932b146a7c892b2.r2.dev/lulupicture.dpdns.org/5.png"
   },
   {
     id: "project-3",
@@ -78,7 +78,7 @@ export const CORE_PROJECTS: Project[] = [
     ],
     results: [],
     h5Url: "https://www.3839.com/a/105882.htm?from=hykb",
-    h5Img: "https://i.ibb.co/WNhnJsPR/20260115042509-239-1.jpg"
+    h5Img: "https://pub-82355f44706248d19932b146a7c892b2.r2.dev/lulupicture.dpdns.org/6.jpg"
   }
 ];
 
