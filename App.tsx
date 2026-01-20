@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -23,16 +22,27 @@ const App: React.FC = () => {
     <div ref={containerRef} className="relative overflow-x-hidden min-h-screen">
       <Header />
       
-      <div className="fixed top-24 left-[2%] z-0 pointer-events-none opacity-40 lg:opacity-100 transition-opacity">
-        <img src="https://i.ibb.co/LDTLPXBt/4399building.png" alt="Decoration" className="max-w-[150px] lg:max-w-[30vw] object-contain" />
+      {/* 左侧装饰图 - 置于左上方，尺寸更精致，z-index 更高 */}
+      <div className="fixed top-[5%] left-[2%] md:left-[4%] lg:left-[6%] z-20 pointer-events-none opacity-20 lg:opacity-70 transition-all duration-1000">
+        <img 
+          src="https://pub-82355f44706248d19932b146a7c892b2.r2.dev/lulupicture.dpdns.org/1%401x.png" 
+          alt="Decoration Left" 
+          className="w-[150px] md:w-[280px] lg:w-[380px] xl:w-[450px] aspect-square object-contain" 
+        />
       </div>
-      <div className="fixed bottom-24 right-[2%] z-0 pointer-events-none opacity-40 lg:opacity-100 transition-opacity">
-        <img src="https://i.ibb.co/wFjw8J1j/jiniu-building.png" alt="Decoration" className="max-w-[150px] lg:max-w-[30vw] object-contain" />
+
+      {/* 右侧装饰图 - 置于右下方，z-index 较低 */}
+      <div className="fixed bottom-[5%] right-[2%] md:right-[4%] lg:right-[6%] z-10 pointer-events-none opacity-20 lg:opacity-70 transition-all duration-1000">
+        <img 
+          src="https://pub-82355f44706248d19932b146a7c892b2.r2.dev/lulupicture.dpdns.org/2%401x.png" 
+          alt="Decoration Right" 
+          className="w-[150px] md:w-[280px] lg:w-[380px] xl:w-[450px] aspect-square object-contain" 
+        />
       </div>
 
       <WindingPath />
 
-      <main className="relative z-10 max-w-6xl mx-auto px-6">
+      <main className="relative z-30 max-w-6xl mx-auto px-6">
         <Hero />
         <About />
         <CoreProjects />
@@ -41,7 +51,7 @@ const App: React.FC = () => {
         <Contact showToast={showToast} />
       </main>
 
-      <footer className="py-12 text-center text-gray-400 text-[0.8rem] font-medium uppercase tracking-wider">
+      <footer className="py-12 text-center text-gray-400 text-[0.8rem] font-medium uppercase tracking-wider relative z-30">
         © 2026 WanLu Product Portfolio • Built with Passion
       </footer>
 
