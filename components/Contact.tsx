@@ -21,6 +21,50 @@ export const Contact: React.FC<ContactProps> = ({ showToast }) => {
     { label: 'Email', value: 'luluhuang45@163.com', icon: Mail, color: 'bg-[#9c533b]' },
   ];
 
+  const handleDownload = async (e: React.MouseEvent) => {
+    // 阻止默认行为，改用 JS 处理以增强兼容性和错误捕获
+    e.preventDefault();
+    
+    try {
+      // 尝试获取文件，确保它存在
+      const response = await fetch('/resume.pdf');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const blob = await response.blob();
+      
+      // 检查 Blob 大小，如果太小可能是 404 页面
+      if (blob.size < 1000) {
+        throw new Error('Downloaded file is too small, possibly a 404 page');
+      }
+
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = "黄皖鹭-个人简历.pdf";
+      
+      // 针对移动端的特殊处理
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.open(url, '_blank');
+      } else {
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+      
+      setTimeout(() => window.URL.revokeObjectURL(url), 10000);
+      showToast("开始下载...");
+    } catch (error) {
+      console.error("Download failed:", error);
+      showToast("简历文件暂不可用，请联系我获取");
+      
+      // 兜底：尝试直接跳转
+      window.open('/resume.pdf', '_blank');
+    }
+  };
+
   return (
     <section id="contact" className="py-32 text-center min-h-[600px] flex flex-col items-center justify-center">
       <motion.div
@@ -54,10 +98,9 @@ export const Contact: React.FC<ContactProps> = ({ showToast }) => {
           </button>
         ))}
 
-        {/* 简历下载按钮：使用相对路径以增强不同部署环境下的兼容性 */}
-        <a
-          href="resume.pdf"
-          download="黄皖鹭-个人简历.pdf"
+        {/* 简历下载按钮：使用 JS 处理以增强兼容性 */}
+        <button
+          onClick={handleDownload}
           className="bg-[#ff9e2c] group flex items-center justify-between px-4 py-3 rounded-2xl shadow-md hover:scale-[1.03] active:scale-95 transition-all text-white h-16"
         >
           <div className="flex items-center gap-2.5 text-left min-w-0 flex-1">
@@ -72,7 +115,7 @@ export const Contact: React.FC<ContactProps> = ({ showToast }) => {
               <span className="text-[0.8rem] font-bold truncate block">个人简历</span>
             </div>
           </div>
-        </a>
+        </button>
       </div>
     </section>
   );
