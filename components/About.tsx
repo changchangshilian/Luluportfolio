@@ -6,11 +6,15 @@ import { METHODS } from '../constants';
 export const About: React.FC = () => {
   return (
     <section id="about" className="py-32 text-center">
-      <div className="mb-16">
-        <h2 className="text-[2.5rem] font-black text-[#9c533b] brush-underline inline-block px-2">
+      <div className="mb-16 flex flex-col items-center">
+        <span className="text-[0.75rem] font-black text-[#FF8EB2] uppercase tracking-[0.4em] mb-4 opacity-70">
+          Methodology
+        </span>
+        <h2 className="text-[2.2rem] font-bold text-[#9c533b] leading-tight relative">
           弯路方法论
+          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-[2px] bg-[#FFD93D] rounded-full" />
         </h2>
-        <p className="mt-6 text-gray-500 font-medium text-[1.1rem] max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-12 text-gray-500 font-medium text-[1.1rem] max-w-2xl mx-auto leading-relaxed">
           我的弯路并非是对效率的妥协，而是一种更长远的选择。
         </p>
       </div>

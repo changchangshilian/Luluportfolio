@@ -6,11 +6,15 @@ import { ExternalLink } from 'lucide-react';
 export const Representative: React.FC = () => {
   return (
     <section id="representative" className="py-24">
-      <div className="text-center mb-10">
-        <h2 className="text-[2.2rem] font-bold text-[#9c533b] brush-underline inline-block">
+      <div className="text-center mb-16 flex flex-col items-center">
+        <span className="text-[0.75rem] font-black text-[#FF8EB2] uppercase tracking-[0.4em] mb-4 opacity-70">
+          Selected Works
+        </span>
+        <h2 className="text-[2.2rem] font-bold text-[#9c533b] leading-tight relative">
           代表项目｜快速浏览
+          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-[2px] bg-[#FFD93D] rounded-full" />
         </h2>
-        <p className="mt-4 text-[1rem] text-gray-500">更多项目经历与落地成果展示</p>
+        <p className="mt-12 text-[1rem] text-gray-500">更多项目经历与落地成果展示</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">

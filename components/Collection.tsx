@@ -5,11 +5,15 @@ import { Lightbulb, ExternalLink } from 'lucide-react';
 export const Collection: React.FC = () => {
   return (
     <section id="collection" className="py-24">
-      <div className="text-center mb-10">
-        <h2 className="text-[2.2rem] font-bold text-[#9c533b] brush-underline inline-block">
+      <div className="text-center mb-16 flex flex-col items-center">
+        <span className="text-[0.75rem] font-black text-[#FF8EB2] uppercase tracking-[0.4em] mb-4 opacity-70">
+          Systematic Assets
+        </span>
+        <h2 className="text-[2.2rem] font-bold text-[#9c533b] leading-tight relative">
           项目合集｜体系化能力
+          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-[2px] bg-[#FFD93D] rounded-full" />
         </h2>
-        <p className="mt-4 text-[1rem] text-gray-500">从单点玩法到体系构建，沉淀可复用的产品资产</p>
+        <p className="mt-12 text-[1rem] text-gray-500">从单点玩法到体系构建，沉淀可复用的产品资产</p>
       </div>
 
       <div className="space-y-12 mt-10">

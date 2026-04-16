@@ -6,11 +6,15 @@ import { ChevronRight, ArrowRight, TrendingUp, Info } from 'lucide-react';
 export const CoreProjects: React.FC = () => {
   return (
     <section id="core-projects" className="py-32">
-      <div className="text-center mb-20">
-        <h2 className="text-[2.5rem] font-black text-[#9c533b] brush-underline inline-block px-2">
+      <div className="text-center mb-24 flex flex-col items-center">
+        <span className="text-[0.75rem] font-black text-[#FF8EB2] uppercase tracking-[0.4em] mb-4 opacity-70">
+          In-depth Showcase
+        </span>
+        <h2 className="text-[2.2rem] font-bold text-[#9c533b] leading-tight relative">
           核心项目｜深度展开
+          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-[2px] bg-[#FFD93D] rounded-full" />
         </h2>
-        <p className="mt-6 text-gray-400 font-medium tracking-wide">每一个项目背后都藏着一条弯路</p>
+        <p className="mt-12 text-gray-400 font-medium tracking-wide">每一个项目背后都藏着一条弯路</p>
       </div>
 
       <div className="space-y-32">

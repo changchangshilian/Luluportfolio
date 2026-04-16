@@ -41,6 +41,7 @@ const App: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoading ? 0 : 1 }}
         transition={{ duration: 1, delay: 0.2 }}
+        className={isLoading ? "hidden" : "block"}
       >
         <Header />
         
